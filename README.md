@@ -19,14 +19,15 @@
 # Setup Express.js Backend
 
 - Make sure that you already have DB running
-- `pnpm install`
 - `pnpm run dev`
 
 # Cloudflare Tunnel
 
 - Fill in the `.env` file with your Cloudflare Tunnel credentials
-- `docker compose --env-file ./.env -f docker-compose-tunnel.yml up -d`
-- `docker compose --env-file ./.env -f docker-compose-tunnel.yml down`
+- Start the container
+  - `docker compose --env-file ./.env -f docker-compose-tunnel.yml up -d`
+- Remove the container
+  - `docker compose --env-file ./.env -f docker-compose-tunnel.yml down`
 
 # Containerization (Express.js appplication) and test
 

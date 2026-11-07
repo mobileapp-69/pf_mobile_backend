@@ -1,4 +1,4 @@
-# Preflight Backend
+# Preflight Backend (Mobile Application)
 
 ## Database Setup
 
@@ -36,5 +36,5 @@
 
 # Push to dockerhub
 
-- `docker tag preflight-backend [DOCKERHUB_ACCOUNT]/preflight-backend:latest`
-- `docker push [DOCKERHUB_ACCOUNT]/preflight-backend:latest`
+- `docker tag preflight-mobile-backend [DOCKERHUB_ACCOUNT]/preflight-backend:latest`
+- `docker push [DOCKERHUB_ACCOUNT]/preflight-mobile-backend:latest`

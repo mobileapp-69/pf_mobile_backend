@@ -8,7 +8,7 @@
   - `pnpm run eol` to set the correct line endings (Windows)
   - `chmod +x ./scripts/*.sh` to make scripts executable (Linux/Mac)
   - `docker compose --env-file ./.env -f docker-compose-db.yml up -d` to start the database
-- Remove DB container
+- Remove DB container (with volume)
   - `docker compose --env-file ./.env -f docker-compose-db.yml down -v`
 
 ## Drizzle Setup
@@ -34,7 +34,12 @@
 # Containerization (Express.js appplication) and test
 
 - Make `.env.test` from `.env.test.example`
-- `docker compose --env-file ./.env.test -f docker-compose-test.yml up -d --force-recreate --build`
+- Build the backend and start containers (backend and tunnel)
+  - `docker compose --env-file ./.env.test -f docker-compose-test.yml up -d --force-recreate --build`
+- Start the backend and tunnel (no build)
+  - `docker compose --env-file ./.env.test -f docker-compose-test.yml up -d --force-recreate`
+- Remove the containers
+  - `docker compose --env-file ./.env.test -f docker-compose-test.yml down`
 
 # Push to dockerhub
 

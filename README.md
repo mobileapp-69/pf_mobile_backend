@@ -1,4 +1,4 @@
-# Preflight Backend (Mobile Application)
+# Preflight Mobile Backend
 
 ## Database Setup
 
@@ -8,6 +8,8 @@
   - `pnpm run eol` to set the correct line endings (Windows)
   - `chmod +x ./scripts/*.sh` to make scripts executable (Linux/Mac)
   - `docker compose --env-file ./.env -f docker-compose-db.yml up -d` to start the database
+- Remove DB container
+  - `docker compose --env-file ./.env -f docker-compose-db.yml down -v`
 
 ## Drizzle Setup
 
@@ -32,9 +34,9 @@
 # Containerization (Express.js appplication) and test
 
 - Make `.env.test` from `.env.test.example`
-- `docker compose --env-file ./.env.test -f docker-compose-backend.yml up -d --force-recreate --build`
+- `docker compose --env-file ./.env.test -f docker-compose-test.yml up -d --force-recreate --build`
 
 # Push to dockerhub
 
-- `docker tag preflight-mobile-backend [DOCKERHUB_ACCOUNT]/preflight-backend:latest`
-- `docker push [DOCKERHUB_ACCOUNT]/preflight-mobile-backend:latest`
+- `docker tag preflight_mobile_backend [DOCKERHUB_ACCOUNT]/preflight_mobile_backend:latest`
+- `docker push [DOCKERHUB_ACCOUNT]/preflight_mobile_backend:latest`

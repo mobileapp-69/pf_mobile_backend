@@ -1,4 +1,4 @@
-name: preflight_mobile_project
+name: preflight_mobile
 services:
   cloudflare-tunnel:
     image: cloudflare/cloudflared:latest

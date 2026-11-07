@@ -1,4 +1,4 @@
-name: preflight_mobile_project
+name: preflight_mobile
 services:
   postgres:
     image: postgres:18-alpine

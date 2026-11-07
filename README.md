@@ -33,6 +33,8 @@
 
 # Containerization (Express.js appplication) and test
 
+- Generate migration (if you have not done so)
+  - `pnpm run db:generate`
 - Make `.env.test` from `.env.test.example`
 - Build the backend and start containers (backend and tunnel)
   - `docker compose --env-file ./.env.test -f docker-compose-test.yml up -d --force-recreate --build`

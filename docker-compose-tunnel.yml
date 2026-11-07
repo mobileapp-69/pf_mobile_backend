@@ -1,8 +1,8 @@
-name: preflight
+name: preflight_mobile_project
 services:
   cloudflare-tunnel:
     image: cloudflare/cloudflared:latest
-    container_name: pf-tunnel
+    container_name: pf_mobile_tunnel
     restart: always
     command: tunnel --no-autoupdate run --url http://host.docker.internal:${PORT:-3001} --token ${CF_TUNNEL_TOKEN}
     extra_hosts:
@@ -11,7 +11,8 @@ services:
       - CF_TUNNEL_TOKEN=${CF_TUNNEL_TOKEN}
       - PORT=${PORT:-3001}
     networks:
-      - preflight_pf-net
+      - pf_mobile_net
 networks:
-  preflight_pf-net: # Check by using `docker network ls` command
+  pf_mobile_net:
+    name: pf_mobile_net
     external: true

@@ -8,7 +8,7 @@ import type { ErrorRequestHandler } from "express";
 import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
-const debug = Debug("pf-backend");
+const debug = Debug("pf_mobile_backend");
 
 //Intializing the express app
 const app = express();

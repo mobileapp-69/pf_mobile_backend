@@ -1,12 +1,12 @@
-name: preflight
+name: preflight_mobile_project
 services:
   postgres:
     image: postgres:18-alpine
-    container_name: pf-db
+    container_name: pf_mobile_db
     ports:
       - ${POSTGRES_PORT}:5432
     volumes:
-      - pf-data:/var/lib/postgresql
+      - pf_mobile_data:/var/lib/postgresql
       - ./_entrypoint:/docker-entrypoint-initdb.d
     environment:
       - TZ=Asia/Bangkok
@@ -16,8 +16,10 @@ services:
       - POSTGRES_APP_USER=${POSTGRES_APP_USER}
       - POSTGRES_APP_PASSWORD=${POSTGRES_APP_PASSWORD}
     networks:
-      - pf-net
+      - pf_mobile_net
 volumes:
-  pf-data:
+  pf_mobile_data:
+    name: pf_mobile_data
 networks:
-  pf-net:
+  pf_mobile_net:
+    name: pf_mobile_net # Use this name exactly

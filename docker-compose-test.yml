@@ -1,6 +1,7 @@
 name: preflight_mobile
 services:
   backend:
+    platform: linux/amd64 # This is required for Apple M1/M2 chips to build the image correctly
     container_name: pf_mobile_backend_test
     build: .
     image: preflight_mobile_backend
